@@ -9,5 +9,23 @@
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
 
+
+  <h1>Receta de un rico flan</h1>
+
+  <h4>Ingredientes</h4>
+    <ol>
+      <li>flan en polvo</li>
+      <li>1000ml de leche</li>
+      <li>caramelo</li>
+    </ol>
+
+  <h4> Receta </h4>
+    <ul>
+      <li>Vierta la leche sobre un recipiente</li>
+      <li>inocrpore lentamente el polvo mientras revuelve</li>
+      <li>ponga la mezcla a fuego bajo, espera a que hierva sin dejar de revolver</li>
+      <li>porcione el contenido y enfríelo durante 12 horas</li>
+    </ul>
+
 </body>
 </html>
