@@ -1,43 +1,48 @@
+let typoClf;
+
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(472, 439);
+  preload();
 }
 
-  function draw(){
+function draw() {
   noStroke();
-  background('#D54D43');
-  smooth();
- 
+  background("#FAF9EF");
+  textFont(typoClf);
 
-  // Letras CLF rotadas
   push();
-  translate(width / 2, height / 2);
-  rotate(PI / 4);
-
-  fill(255);
-  textAlign(CENTER, CENTER);
-  textSize(160);
-  textFont('Helvetica');
-  textStyle(BOLD);
-  text('L', -90, -80);
-  text('C', -90, 60);
-  text('F', 90, 60);
-
-
-  // Diagonal blanca
-  stroke(255);
-  strokeWeight(20);
-  line(-70, -70, 70, 70);
+  fill("#DB504A");
+  rectMode(CENTER);
+  rect(width / 2, height / 2, 472, 439, 16);
   pop();
 
-  // Texto "2025" con 0 tachado
-  noStroke();
-  fill(255);
-  textSize(40);
-  textAlign(LEFT, BOTTOM);
-  text('2025', 20, height - 20);
+  // rotación
+  push();
+  translate(width / 2, height / 2);
+  angleMode(DEGREES);
+  rotate(319);
 
-  // Tachado sobre el "0"
-  stroke(255);
-  strokeWeight(4);
-  line(38, height - 42, 56, height - 22);
+  fill(255);
+  fill("#FAF9EF");
+  textAlign(CENTER, CENTER);
+  textSize(160);
+  textStyle(BOLD);
+  //C
+  text("C", -50, 60);
+  //L
+  text("L", 60, -28);
+  //F
+  text("F", 50 + 5, 148 - 2);
+  // Diagonal blanca
+  rect(17, 73, 133, 20);
+  pop();
+
+  //2025
+  fill("#FAF9EF");
+  textSize(30);
+  text("2025", 20, height - 20);
+}
+
+function preload() {
+  typoClf = loadFont("/fonts/Bungee-Regular.ttf");
 }
