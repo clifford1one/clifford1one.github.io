@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica', Arial, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            align-items: center; /* Centra verticalmente */
+        }
+
+        .text-section {
+            width: 50%;
+            padding: 3rem;
+            box-sizing: border-box;
+        }
+
+        .header {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 4rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-item {
+            font-size: 1.1rem;
+        }
+
+        .year {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .visual-section {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .p5-container {
+            width: 500px;
+            height: 500px;
+            border: none;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Opcional: sombra para mejor visualización */
+        }
+    </style>
+</head>
+<body>
+    <div class="text-section">
+        <div>
+            <div class="header">xxxx - xxxx xxxx xxxx</div>
+            
+            <div class="skills-grid">
+                <div class="skill-item">xxxx</div>
+                <div class="skill-item">xxxx xx</div>
+                <div class="skill-item">xxxx xxxx</div>
+                <div class="skill-item">xxxxxx</div>
+                <div class="skill-item">xx</div>
+                <div class="skill-item">xx xx xxxxxxx</div>
+                <div class="skill-item">xxxxxx 3x</div>
+            </div>
+        </div>
+        
+        <div class="year">xxxx</div>
+    </div>
+    
+    <div class="visual-section">
+        <!-- Iframe con tamaño fijo 500x500 -->
+        <iframe class="p5-container" 
+                src="https://editor.p5js.org/clifford1one/full/We5Wap2sL"
+                scrolling="no"
+                frameborder="0"></iframe>
+    </div>
+</body>
+</html>
