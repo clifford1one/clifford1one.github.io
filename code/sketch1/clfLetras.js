@@ -1,4 +1,4 @@
-let typoClf;
+      let typoClf;
 
 function setup() {
   createCanvas(472, 439);
