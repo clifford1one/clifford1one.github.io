@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Sketch</title>
+    
+    <!-- Load the Processing.js library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.0/processing.min.js"></script>
+	</head>
+	<body>
+		<script type="application/processing">
+			int widthDelgadin;
+int widthGrueso;
+
+int medidaEnorme;
+int medidaGrande;
+//int medidaIntermedia;
+int medidaShika;
+int medidita = 18;
+
+int filletsito;
+int filletShiko;
+int filletIntermedio = 30;
+int filletGrande;
+int filletMaximo;
+
+int bodySizeX;
+
+
+//primer intento por hacer un personajillo
+void setup() {
+  size(500, 500);
+  widthDelgadin = 54;
+  widthGrueso = 150;
+  
+  medidaEnorme = 
+  medidaGrande =
+  //medidaIntermedia = 150;
+  medidaShika = 40;
+
+bodySizeX = 150;
+
+  filletGrande = 60;
+  filletIntermedio = 30;
+  filletShiko = 10;
+  filletsito = 6;
+}
+
+void draw() {
+  background(255, 150, 70);
+  noStroke();
+  translate(250, 230);
+
+  //cabezaInferior
+  fill(255, 120, 60);
+  rectMode(CENTER);
+  rect(0, 15, bodySizeX, 90, filletGrande, filletGrande, 0, 0);
+
+  //cabezaSuperior
+  fill(255, 120, 60);
+  ellipseMode(CENTER);
+  ellipse(0, -20, 90, 90);
+
+  //ojo   0.0
+  fill(255, 240, 240);
+  ellipse(0, -20, 80, 80);
+
+  //pupila
+  fill(20, 5, 5);
+  ellipse(0, -20, 50, 50);
+
+
+  //reflejo del ojo
+  fill(255, 240, 240);
+  ellipse(17, -39, 20, 20);
+
+  //pecera(?)
+  fill(190, 190, 240, 40);
+  ellipse(0, -5, 200, 190);
+  
+  //piernitas: primero izquierda y dps derecha
+  fill(255, 120, 60);
+  rectMode(CENTER);
+rect(-35, 180, medidita, 40);
+  rectMode(CENTER);
+rect(35, 180, medidita, 40);
+  
+  
+
+  //ropa tronco
+  fill(90, 90, 100);
+  rectMode(CENTER);
+  rect(0, 100, bodySizeX, 90, 0, 0, filletIntermedio, filletIntermedio);
+
+  //pantalon izquierdo
+  fill(90, 90, 100);
+  rectMode(CENTER);
+  rect(-35, 130, medidaShika, 90, filletShiko);
+
+  //pantalon derecho
+  fill(90, 90, 100);
+  rectMode(CENTER);
+  rect(35, 130, medidaShika, 90, filletShiko);
+
+  //"cuello" - q es cmo un cinturon q va en el cuello -
+  fill(165, 165, 180);
+  rect(0, 60, 170, 20, filletsito);
+  
+  
+}
+		</script>
+		<canvas> </canvas>
+	</body>
+</html>
