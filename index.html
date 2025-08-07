@@ -1,32 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sketches p5.js</title>
-    <style>
-        body {
-            font-family: 'Courier New', sans-serif; /* Fuente principal */
-        }
-        h1 {
-            font-family: 'Arial', serif; /* Fuente alternativa para títulos */
-        }
-        a {
-            font-family: 'Courier New', monospace; /* Fuente para enlaces */
-        }
+ <title>Sketches p5.js</title>
+ <style> 
+     body {
+     font-family: 'Courier New', sans-serif; /* Fuente principal */
+     display: flex;
+     }
+     h1 {
+     font-family: 'Arial', serif; /* Fuente alternativa para títulos */
+     }
+     a {
+     font-family: 'Courier New', monospace; /* Fuente para enlaces */
+     }
+     .left-column {
+     width: 35%; /* Ocupa el 45% del ancho */
+     }
+     .right-column {
+     width: 45%; /* Ocupa el 45% del ancho */
+     /*text-align: right;  Alinea el contenido a la derecha */
+     display: flex;
+     justify-content: center;
+     }
+     canvas {
+    /* border: 1px solid black; /* Borde para visualizar el canvas */ */
+     }
     </style>
 </head>
 <body>
-    <h1>Santiago Gaete Fernández</h1>
-    <h2>clifford1one</h2>
-    
-    <div>
-        <a href="sketch1/sketch1.html">logito</a><br>
-        <a href="rainyDays/rainy.html">rainyDays</a><br>
-        <a href="pizaByAlfredo/alfredo.html">Pizza By Alfredo</a><br>
-        <a href="melman/melman.html">melman</a><br>
-        <a href="vandalosChinos/bach.html">cover BACH</a> </br>
-        <a href="astronaut/astronaut.html">astronauta</a> </br>
-        <a href="paint/paint.html">paint</a> </br>
-        <a href="colorSelector/color.html">colorSelector</a>
+    <div class="left-column">
+     <h1>Santiago Gaete Fernández</h1>
+     <h2>clifford1one</h2>
+
+     <a href="sketch1/sketch1.html">logito</a><br>
+     <a href="rainyDays/rainy.html">rainyDays</a><br>
+     <a href="pizaByAlfredo/alfredo.html">Pizza By Alfredo</a><br>
+     <a href="melman/melman.html">melman</a><br>
+     <a href="vandalosChinos/bach.html">cover BACH</a> </br>
+     <a href="astronaut/astronaut.html">astronauta</a> </br>
+     <a href="paint/paint.html">paint</a> </br>
+     <a href="colorSelector/color.html">colorSelector</a>
+    </div>
+    <div class="right-column">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+     <script>
+         let font;
+         function preload() {
+         font = loadFont("./fonts/NewAmsterdam-Regular.ttf");
+         }
+         function setup() {
+         let canvas =createCanvas(1200, 600);
+         canvas.parent('canvas-container');
+         }
+         function draw() {
+         background(255,0);
+         textFont(font);
+         textSize(400);
+         textAlign(CENTER, CENTER);
+         noStroke();
+         rect(0,0+100,width,height-100);
+         fill(100,0,0);
+         text("Clifford", width / 2, height-200);
+         fill(255);
+         text("Clifford", width / 2-0.5, height-200);
+
+         }
+     </script>
+     <div id="canvas-container"></div>
     </div>
 </body>
 </html>
