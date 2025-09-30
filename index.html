@@ -1,72 +1,209 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
- <title>Sketches p5.js</title>
- <style> 
-     body {
-     font-family: 'Courier New', sans-serif; /* Fuente principal */
-     display: flex;
-     }
-     h1 {
-     font-family: 'Arial', serif; /* Fuente alternativa para títulos */
-     }
-     a {
-     font-family: 'Courier New', monospace; /* Fuente para enlaces */
-     }
-     .left-column {
-     width: 35%; /* Ocupa el 45% del ancho */
-     }
-     .right-column {
-     width: 45%; /* Ocupa el 45% del ancho */
-     /*text-align: right;  Alinea el contenido a la derecha */
-     display: flex;
-     justify-content: center;
-     }
-     canvas {
-    /* border: 1px solid black; /* Borde para visualizar el canvas */ */
-     }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Mi Portfolio</title>
+ <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #f5f5f5;
+            padding: 40px 30px;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+        }
+
+        .sidebar nav {
+            margin-top: 60px;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+        }
+
+        .sidebar nav li {
+            margin-bottom: 25px;
+        }
+
+        .sidebar nav a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-transform: lowercase;
+        }
+
+        .sidebar nav a:hover {
+            color: #808080;
+        }
+
+        .content {
+            margin-left: 250px;
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .gallery {
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 1px;
+            overflow: hidden;
+            box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+            <!--este es el borde del item. lo saque a la mala-->
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item p {
+            padding: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 200px;
+            }
+            
+            .content {
+                margin-left: 200px;
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 30px;
+            }
+
+            .sidebar nav {
+                margin-top: 20px;
+            }
+
+            .sidebar nav ul {
+                display: flex;
+                gap: 20px;
+            }
+
+            .sidebar nav li {
+                margin-bottom: 0;
+            }
+
+            .content {
+                margin-left: 0;
+                padding: 30px;
+                justify-content: center;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+  </style>
 </head>
 <body>
-    <div class="left-column">
-     <h1>Santiago Gaete Fernández</h1>
-     <h2>clifford1one</h2>
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#projects">projects</a></li>
+                    <li><a href="#sketches">sketches</a></li>
+                    <li><a href="#about">about</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-     <a href="sketch1/sketch1.html">logito</a><br>
-     <a href="rainyDays/rainy.html">rainyDays</a><br>
-     <a href="pizaByAlfredo/alfredo.html">Pizza By Alfredo</a><br>
-     <a href="melman/melman.html">melman</a><br>
-     <a href="vandalosChinos/bach.html">cover BACH</a> </br>
-     <a href="astronaut/astronaut.html">astronauta</a> </br>
-     <a href="paint/paint.html">paint</a> </br>
-     <a href="colorSelector/color.html">colorSelector</a>
-    </div>
-    <div class="right-column">
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
-     <script>
-         let font;
-         function preload() {
-         font = loadFont("./fonts/NewAmsterdam-Regular.ttf");
-         }
-         function setup() {
-         let canvas =createCanvas(1200, 600);
-         canvas.parent('canvas-container');
-         }
-         function draw() {
-         background(255,0);
-         textFont(font);
-         textSize(400);
-         textAlign(CENTER, CENTER);
-         noStroke();
-         rect(0,0+100,width,height-100);
-         fill(100,0,0);
-         text("Clifford", width / 2, height-200);
-         fill(255);
-         text("Clifford", width / 2-0.5, height-200);
+        <main class="content">
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="./imgs/egoCracia-m.png" alt="Proyecto 1">
+                    <p>EGOCRACIA</p>
+                </div>
 
-         }
-     </script>
-     <div id="canvas-container"></div>
+                <div class="gallery-item">
+                    <img src="./imgs/voluntadGuiada-m.png" alt="Proyecto 2">
+                    <p>VoluntadGuiada</p>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./imgs/gbw-m.png" alt="Proyecto 3">
+                    <p>GO BACK WARDS</p>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./imgs/fps555-m.png" alt="Proyecto 4">
+                    <p>fps555</p>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./imgs/rainyDays-m.png" alt="Proyecto 5">
+                    <p>rainyDays</p>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="./imgs/totem-m.png" alt="Proyecto 6">
+                    <p>tótems de impresión</p>
+                </div>
+<!--
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=450&fit=crop" alt="Proyecto 7">
+                    <p>pixel hero</p>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800&h=450&fit=crop" alt="Proyecto 8">
+                    <p>Pizza by Alfredo</p>
+                </div>-->
+
+            </div>
+        </main>
     </div>
 </body>
 </html>
