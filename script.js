@@ -67,6 +67,7 @@ const SYMS_IMG = {
   baltica: "imgs/slot-baltica.png",
   wario: "imgs/slot-wario.png",
   mushroom: "imgs/slot-marioMushroom.png",
+  cliffYo: "imgs/logo-500px.png",
 };
 
 const SYM_KEYS = Object.keys(SYMS_IMG);
